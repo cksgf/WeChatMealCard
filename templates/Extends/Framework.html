@@ -1,0 +1,17 @@
+<body>
+<script type="text/javascript">
+	
+if (self == top) {    
+  var temp = document.createElement("form");
+  temp.action = '/';
+  temp.method = "post";
+  temp.style.display = "none";
+  var opt = document.createElement("textarea");
+  opt.name = 'path';
+  opt.value = location.pathname+location.search;
+  temp.appendChild(opt);
+  document.body.appendChild(temp);
+  temp.submit();
+}
+</script>
+</body>

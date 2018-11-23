@@ -1,0 +1,98 @@
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>充值/消费查询</title>
+    	{% include 'Extends/Framework.html' ignore missing %}
+</head>
+  <style type="text/css">
+span, label{vertical-align:middle;}
+input[type="radio"]{appearance: none; -webkit-appearance: none;outline: none;display:none}
+label{display:inline-block;cursor:pointer;}
+label input[type="radio"] + span{width:20px;height:20px;display:inline-block;background:url("static/img/input-radio.gif")  no-repeat;background-position:-26px 0;}
+label input[type="radio"]:checked + span{background-position:0 0}
+</style>
+<style>
+.buttonte {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #708090;
+}
+
+.button1:hover {
+    background-color: #778899;
+    color: white;
+}
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #D3D3D3;
+}
+
+.button3:hover {
+    background-color: #808080;
+    color: white;
+}
+</style> 
+<br><br>
+<body>
+<div style="margin-top: -35">
+<a style="float:left;color:#666666;margin-left:5px;margin-top:15px">饭卡操作>>日流水查询</a><div style="float:right;margin-top:0px;background-color:#666666;width:300px;height:35px;border: 5px solid #dedede; -moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px;"><a style="float:left;color:#fff;margin-left:8%;margin-top:5px">API-日流水查询</a></div>
+  <img src="/static/img/wechatlogo.jpg" width=50px height=50px style="float:right; ">
+  <div style="background-color:rgb(50,50,50);width:100%;height:3px;clear:both"></div>
+</div>
+  <div style="border: 5px solid #dedede;border-radius:15px;background-color:#E0E6F8">
+  
+    <form class="form-signin" action="/SelectMealLog" method="get">
+    <div style="background-color:rgb(47,48,49);width:150px;height:30px;color :#fff;margin-top:-20px;border:15px;border-radius:10px;"><h3 style="margin-left:20%;">条件搜索：</h3></div>
+      <br>
+<div class="box" >
+		<label><input type="radio" name="types" value="pay" {{ ckd["pay"]|safe }}><span></span>查询消费</label>
+		<label style="margin-left:20"><input type="radio" name="types" value="rechange" {{ ckd["rechange"]|safe }} ><span></span>查询充值</label>
+        <label style="margin-left:20"><a>日期：</a><input type="date" name="date" value={{ date }} ><span></span></label>
+        <input type="submit" class="buttonte button3" value="查询"/>
+  </div>
+</form>
+     
+  </div>
+   <br>
+<form action="/SelectMealLog" method="post">
+<input type="text" name="day" value="{{ date }}" readonly=readonly style="display:none" >
+<input type="submit" class="buttonte button1" value="下载今日报表"/>
+<a style="font:normal 18px/24px 'MicroSoft YaHei';">该栏目下本日共计{{ moneys }}元</a>
+</form>
+ <hr style="background-color:rgb(47,48,49);margin-top:0px">
+  
+{% for i in record %}
+<div style="background-color:rgb(47,48,49);width:60%;height: 20px;color: #fff;clear:both">
+    <a>[时间]：{{ i[0] }}
+        <a style="margin-left: 30px">[饭卡号码]：{{ i[5] }}</a>
+    </a>
+</div>
+<div style="font-size:10px">
+  <a style="float:left;clear:both">详情：{{ i[1] }}</a>
+  <a style="float:left;clear:both">原金额：{{ i[7] }}</a>
+  <a style="float:left;margin-left: 30px">{{types}}金额：{{ i[2] }}</a>
+  <a style="float:left;clear:both">订单号：{{ i[3] }}</a><br>
+  <a style="float:left;margin-left:30px">本次{{types}}后剩余：{{ i[4] }}</a>
+  <hr style="float: left; clear:both;width:60%">
+</div> 
+{% endfor %}
+<br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>处理结果</title>
+  <style>
+    .buttonte {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(50,50,50);
+}
+
+.button:hover {
+    background-color:   rgb(50,50,50);
+    color: white;
+}
+    input {
+    width:80%}
+    a {
+      background-color:#A9D0F5;
+      border-top-right-radius:5em;
+      border-bottom-right-radius:5em;
+    }
+    </style>
+</head>
+<body style="background-color:#fff;">
+  <img src="/static/img/wechatlogo.jpg" width=70% height=70% style="float:left;margin-left:15%;position: relative">
+  <div style="float:right;margin-left:33%;margin-top:62%;background-color:#666666;width:60%;height:25px;border: 5px solid #dedede; -moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px; position:absolute"><h3 style="float:right;color:#fff;margin-top:-1.5%;margin-left:40%;margin-right:2px; position:absolute">处理结果</h3></div>
+<div style="float:left;margin-top:80%;width:95%; position:absolute;text-align:center;  ">
+    {% if errcode %}
+    <h2>错误代码：{{ errcode }}</h2>
+    <h2>错误信息：{{ text }}</h2>
+    {% else %}
+    <h2>{{ text }}</h2>
+    {% endif %}
+    <br>
+  <input type="button" class="buttonte button" name="Submit" onclick="javascript:history.back(-1);" value="返回上一页">
+</div>
+
+</body>
+</html>

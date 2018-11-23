@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>全部用户</title>
+    	{% include 'Extends/Framework.html' ignore missing %}
+</head>
+<body style="background-color : #fff">
+  <a style="float:left;color:#666666;margin-left:5px;margin-top:15px">饭卡操作>>全部用户</a><div style="float:right;margin-top:0px;background-color:#666666;width:300px;height:35px;border: 5px solid #dedede; -moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px;"><a style="float:left;color:#fff;margin-left:8%;margin-top:5px">API-全部用户</a></div>
+  <img src="/static/img/wechatlogo.jpg" width=50px height=50px style="float:right; "><div style="background-color:rgb(50,50,50);width:100%;height:3px;clear:both"></div>
+  <div style="float:left;margin-top:200px;margin-left:400px;clear:both;width:350">     
+  <form action="/selectStudentTable" method="post" id="search">
+            <a>查询关键词：</a><input name="keys" style="30px ;width:350px;resize: none;">
+            <br>
+            <button class="buttonte button0" id="search" style="float:left;margin-left:200px;margin-top: 10px">搜索</button> 
+        </form>
+</div>
+  <div style="float:left;margin-top:10px;margin-left:400px;clear:both;width:500">
+
+{% for i in record %}
+  <a style="float:left;color:#fff;background-color:rgb(50,50,50);clear:both">注册时间：{{ i[7]|safe }}</a>
+  <div>
+  <a style="float:left;clear:both">学生姓名：{{ i[2]|safe }}</a>
+  <a style="float:left;margin-left:30px">家长姓名：{{ i[3]|safe }}</a>
+    </div>
+      <div>
+  <a style="float:left;clear:both">家长号码：{{ i[4]|safe }}</a>
+  <a style="float:left;margin-left:30px">饭卡：{{ i[6]|safe }}</a>
+    </div>
+      <a style="float:left;clear:both">绑定ID：{{ i[1]|safe }}</a>
+    <a style="float:left;clear:both">家庭住址：{{ i[5]|safe }}</a>
+  <hr style="clear:both">
+{% endfor %}
+    </div>
+</body>
+</html>

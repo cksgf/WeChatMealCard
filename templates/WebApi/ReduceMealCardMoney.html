@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>添加消费记录</title>
+    	{% include 'Extends/Framework.html' ignore missing %}
+  <style>
+    .buttonte {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(50,50,50);
+}
+
+.button:hover {
+    background-color:   rgb(50,50,50);
+    color: white;
+}
+    </style>
+</head>
+<body style="background-color : #fff">
+
+  <a style="float:left;color:#666666;margin-left:5px;margin-top:15px">饭卡操作>>添加消费记录</a><div style="float:right;margin-top:0px;background-color:#666666;width:300px;height:35px;border: 5px solid #dedede; -moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px;"><a style="float:left;color:#fff;margin-left:8%;margin-top:5px">API-饭卡消费</a></div>
+  <img src="/static/img/wechatlogo.jpg" width=50px height=50px style="float:right; ">
+  <div style="background-color:rgb(50,50,50);width:100%;height:3px;clear:both"></div>
+    <div style="float:left;margin-top:200px;margin-left:250px;clear:both;width:500;height:500px">
+<form action="/ReduceMealCardMoney" method="post" id="sutdent">
+    	<a>饭卡号码：</a><input type="text" name="MealCard"  placeholder='请输入饭卡号码' style="border: 0px;outline:none;cursor: pointer;"><hr><br>
+      	<a>饭卡消费详情：</a><input type="text" name="RECORD"  placeholder='请输入消费详情' style="border: 0px;outline:none;cursor: pointer;"><hr><br>
+      	<a>本次消费金额：</a><input type="text" name="ReduceMealCardMoney"  placeholder='请输入本次消费金额' style="border: 0px;outline:none;cursor: pointer;"><hr><br>
+        <a>输入口令：</a><input type="password" name="pwd"  placeholder='请输入验证口令' style="border: 0px;outline:none;cursor: pointer;"><hr><br>
+    <button type="submit" id="sutdent" class="buttonte button">提交申请</button>
+</form>
+    </div>
+    <hr style="float:left;width:1px;height:650px;margin-left:150px">
+
+  <div style="float:left;margin-left:700px;margin-top:-620px;width:550px;font-size:15">
+    <h3>API使用前提：</h3>
+    <a>以Python为例，使用requests构造、发送请求</a>
+    <li><a>import requests</a></li>
+    <li><a>r=requests.session()#维持会话</a></li>
+    <li><a>data={'username':'账号','password':'密码','json':'True'}</a></li>
+    <li><a>r.post('http://wxgl.wenrui.work/login',data=data)</a></li>
+    <hr>
+    <h3>API使用方法：</h3>
+    <li><a>data={'MealCard':'饭卡号码',</a></li>
+    <li><a>'RECORD':'消费备注',</a></li>
+    <li><a>'ReduceMealCardMoney':'消费金额',</a></li>
+    <li><a>'pwd':'操作口令'}</a></li>
+    <li><a>r.post('http://wxgl.wenrui.work/ReduceMealCardMoney',data=data).text</a></li>
+    <hr>
+    <h4>若成功，则返回json格式数据:'{"code": "success", "errorcode": "None", "value": {"result": "success"}}'</h4>
+    <h4>若出错，则json格式数据为:'{"code": "error", "errorcode": "1001/1002", "value": {"result": "此处为返回的错误原因"}}'</h4>
+    <h4>错误代码1001为网页传参出错，1002为数据库操作出错</h4>
+    </div>
+</body>
+</html>
+

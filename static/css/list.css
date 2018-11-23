@@ -1,0 +1,213 @@
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    list-style:none;
+    margin: 0;
+}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+ul.pagination li a.active {
+    background-color: 0066FF;
+    color: white;
+    border: 1px solid 0066FF;
+}
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+.columnList-flag-container {
+    width: 188px;
+    background-color: #f1f1f1;
+    float: left;
+    overflow: hidden;
+    height: 528px;
+    position: relative
+}
+.column .btnDiv {
+    padding-top: 7px;
+    padding-bottom: 19px;
+    font-size: 0
+}
+
+.column .g-common-btn {
+    height: 38px;
+    line-height: 38px;
+    width: 110px;
+    margin-right: 0
+}
+
+.column .g-empty-btn {
+    margin-right: 11px
+}
+.columnList-container {
+    position: relative;
+    height: 446px;
+    float: left;
+    width: 100%
+}
+.columnList li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 334px;
+    float: left;
+    _overflow: hidden
+}
+.columnList .column.hover {
+    box-shadow: 4px 7px 7px rgba(208,205,205,.51);
+    /*margin-top: -1px;*/
+    z-index: 2
+}
+
+.columnList {
+    text-align: center;
+    -ms-filter: alpha(Opacity=0);
+    filter: alpha(Opacity=0);
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+    z-index: 10
+}
+
+.wide1190 {
+    margin: 0 auto;
+    min-width: 990px;
+    max-width: 1190px;
+    _overflow: hidden;
+    zoom: 1
+}
+.g-common-btn {
+    border: 0;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    margin-right: 6px;
+    width: 96px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    text-align: center;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer
+}
+
+.g-empty-btn {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #2086ee;
+    color: #2086ee;
+    background-color: #fff
+}
+
+.hover .g-empty-btn,.g-empty-btn:hover {
+    background-color: #2086ee;
+    color: #fff
+}
+.buttonte {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 38px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 0px 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #D26900;
+}
+
+.button3:hover {
+    background-color:   #BB5E00;
+    color: white;
+}
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #D26900;
+    text-align: center;
+}
+
+.button1:hover {
+    background-color:   #BB5E00;
+    color: white;
+}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ECE0F8;
+    text-align: center;
+}
+
+.button2:hover {
+    background-color:   #E3CEF6;
+    color: white;
+}
+.button4 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #A9F5D0;
+    text-align: center;
+}
+
+.button4:hover {
+    background-color:   #81F7BE;
+    color: white;
+}
+.button5 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #E1F5A9;
+    text-align: center;
+}
+
+.button5:hover {
+    background-color:   #D8F781;
+    color: white;
+}
+.button0 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #BDBDBD;
+    text-align: center;
+}
+
+.button0:hover {
+    background-color:  #585858;
+    color: white;
+}
+.divboxxx{ width:277px; height:235px;}
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+ul.pagination li a.active {
+    background-color: 0066FF;
+    color: white;
+    border: 1px solid 0066FF;
+}
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}

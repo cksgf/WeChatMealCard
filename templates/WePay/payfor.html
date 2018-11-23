@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<title>充值</title>
+</head>
+<body style="background-color : #fff">
+  <img src="/static/img/wechatlogo.jpg" width=15% height=15% style="float:left;margin-left:1%">
+  <div style="float:right;margin-top:0px;background-color:#666666;width:65%;height:35px;border: 5px solid #dedede; -moz-border-radius: 15px; -webkit-border-radius: 15px;border-radius:15px;"><a style="float:right;color:#fff;margin-right:8%;margin-top:5px">饭卡充值</a></div>
+<div style="background-color:rgb(50,50,50);width:100%;height:3px;clear:both"></div>
+<h2>选择你的金额</h2>
+<form action="/pay/{{ openid }}" method="post">
+<input type="text" name="openid" value="{{ openid }}" style="display:none"/>
+<input type="radio" name="money" value="0.01" />0.01
+<input type="radio" name="money" value="10" />10
+<input type="radio" name="money" value="20" />20
+  <br>
+<input type="radio" name="money" value="50" />50
+<input type="radio" name="money" value="80" />80
+<input type="radio" name="money" value="100" />100
+<input type="radio" name="money" value="150" />150
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
+
+
+
+
+
+

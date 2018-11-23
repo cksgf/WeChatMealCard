@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0"> 
+<title>登录</title> 
+<link href="/static/css/login.css" type="text/css" rel="stylesheet"> 
+</head> 
+<body style="height:650px"> 
+
+<div class="login" style="float: auto;margin-top: 80px">
+    <div class="message">需要登录</div>
+    <div id="darkbannerwrap"></div>
+    
+    <form method="post" action="/login">
+		<input name="username" placeholder="用户名" required="" type="text">
+		<hr class="hr15">
+		<input name="password" placeholder="密码" required="" type="password">
+		<hr class="hr15">
+		<input value="登录" style="width:100%;" type="submit">
+		<hr class="hr20">
+		<p>进行此项操作，需要登录</p><a style="color:red">{{ message }}</a>
+		
+	</form>
+</div>
+</body></html>
